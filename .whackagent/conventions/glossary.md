@@ -43,6 +43,7 @@ A named piece of UI, reused or talked about on its own. UI projects only.
 |---|---|---|---|---|
 | Personnage à l'écran | trombone | `ClippyView` | où on le pose (bas droit par défaut) | le personnage choisi, déplaçable |
 | Menu Toctoc | icône porte | `CharacterMenuView` | barre des menus | choix du personnage, sous-menu Accessoire, Quitter Toctoc |
+| Présentation | onboarding | `OnboardingStore` | à la première ouverture, 5 bulles empilées | le personnage se présente et renvoie au guide (README) |
 | Bulle | | `BubbleView` | à côté du trombone, jusqu'à 3 empilées | message court d'une session |
 <!-- | Composer | editor | `ComposerView` | Inbox, Thread | writes or replies to a message | -->
 

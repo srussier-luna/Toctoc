@@ -9,41 +9,48 @@ import SwiftUI
 
 struct BubbleStackView: View {
     let store: SessionStore
+    let onboarding: OnboardingStore
     let claude: ClaudeApplication
 
     private var side: BubbleSide = .left
     private var onBubbleFramesChange: @MainActor ([CGRect]) -> Void = { _ in }
 
-    @State private var frames: [Bubble.ID: CGRect] = [:]
+    @State private var frames: [UUID: CGRect] = [:]
 
-    init(store: SessionStore, claude: ClaudeApplication) {
+    @Environment(\.openURL) private var openURL: OpenURLAction
+
+    init(store: SessionStore, onboarding: OnboardingStore, claude: ClaudeApplication) {
         self.store = store
+        self.onboarding = onboarding
         self.claude = claude
     }
 
     var body: some View {
         VStack(alignment: alignment.horizontal, spacing: Constants.spacing) {
-            ForEach(store.bubbles) { bubble in
-                Button {
-                    open(bubble)
-                } label: {
-                    BubbleView(bubble.message)
+            if onboarding.isShown {
+                ForEach(onboarding.steps) { step in
+                    bubbleButton(id: step.id) {
+                        dismiss(from: step)
+                    } label: {
+                        BubbleView(step.message)
+                            .multiline()
+                    }
                 }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier(Constants.identifier)
-                .onGeometryChange(for: CGRect.self) { proxy in
-                    proxy.frame(in: .global)
-                } action: { frame in
-                    frames[bubble.id] = frame
+            } else {
+                ForEach(store.bubbles) { bubble in
+                    bubbleButton(id: bubble.id) {
+                        open(bubble)
+                    } label: {
+                        BubbleView(bubble.message)
+                    }
                 }
-                .transition(.scale(scale: Constants.appearScale, anchor: anchor).combined(with: .opacity))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
         .padding(Constants.shadowInset)
-        .animation(.spring(duration: Constants.animationDuration), value: store.bubbles)
-        .onChange(of: store.bubbles) {
-            frames = frames.filter { id, _ in store.bubbles.contains { $0.id == id } }
+        .animation(.spring(duration: Constants.animationDuration), value: shownIDs)
+        .onChange(of: shownIDs) {
+            frames = frames.filter { id, _ in shownIDs.contains(id) }
         }
         .onChange(of: bubbleFrames, initial: true) {
             onBubbleFramesChange(bubbleFrames)
@@ -68,8 +75,35 @@ struct BubbleStackView: View {
         }
     }
 
+    private var shownIDs: [UUID] {
+        onboarding.isShown ? onboarding.steps.map(\.id) : store.bubbles.map(\.id)
+    }
+
     private var bubbleFrames: [CGRect] {
-        store.bubbles.compactMap { frames[$0.id] }
+        shownIDs.compactMap { frames[$0] }
+    }
+
+    private func bubbleButton(
+        id: UUID,
+        action: @escaping @MainActor () -> Void,
+        @ViewBuilder label: () -> some View
+    ) -> some View {
+        Button(action: action, label: label)
+            .buttonStyle(.plain)
+            .accessibilityIdentifier(Constants.identifier)
+            .onGeometryChange(for: CGRect.self) { proxy in
+                proxy.frame(in: .global)
+            } action: { frame in
+                frames[id] = frame
+            }
+            .transition(.scale(scale: Constants.appearScale, anchor: anchor).combined(with: .opacity))
+    }
+
+    private func dismiss(from step: OnboardingStep) {
+        if let link = step.link {
+            openURL(link)
+        }
+        onboarding.dismiss(step)
     }
 
     private func open(_ bubble: Bubble) {

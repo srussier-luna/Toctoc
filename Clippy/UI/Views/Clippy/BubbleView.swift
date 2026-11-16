@@ -10,6 +10,8 @@ import SwiftUI
 struct BubbleView: View {
     private let message: String
 
+    private var isMultiline: Bool = false
+
     init(_ message: String) {
         self.message = message
     }
@@ -17,7 +19,7 @@ struct BubbleView: View {
     var body: some View {
         Text(message)
             .font(.callout)
-            .lineLimit(1)
+            .lineLimit(isMultiline ? nil : 1)
             .truncationMode(.middle)
             .padding(.horizontal)
             .padding(.vertical, Constants.verticalPadding)
@@ -27,6 +29,14 @@ struct BubbleView: View {
                     .strokeBorder(.separator)
             }
             .shadow(color: .black.opacity(Constants.shadowOpacity), radius: Constants.shadowRadius, y: Constants.shadowOffset)
+    }
+}
+
+extension BubbleView {
+    func multiline(_ isMultiline: Bool = true) -> Self {
+        var copy: Self = self
+        copy.isMultiline = isMultiline
+        return copy
     }
 }
 

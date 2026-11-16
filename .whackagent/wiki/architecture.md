@@ -13,9 +13,9 @@
 
 | Folder | Holds |
 |---|---|
-| `Clippy/Core/Claude` | `ClaudeApplication`: activation |
+| `Clippy/Core/Claude` | `ClaudeApplication`: activation; `ClaudeSessionLinkFinder` |
 | `Clippy/Core/Events` | `ClippyEvent`, `ClippyEvent.Kind` |
-| `Clippy/Core/Stores` | `SessionStore`, `CharacterStore` + `CharacterStorage`; models `Mood`, `Session`, `Bubble`, `CharacterKind`, `AccessoryKind` |
+| `Clippy/Core/Stores` | `SessionStore`, `CharacterStore` + `CharacterStorage`, `OnboardingStore` + `OnboardingStorage`; models `Mood`, `Session`, `Bubble`, `CharacterKind`, `AccessoryKind`, `OnboardingStep` |
 | `Clippy/Core/Overlay` | `ClippyOverlay`, `NSPanel.overlay(…)`, `FirstClickHostingView`, `ClippyPositionStorage`; placement math in `Models/` |
 | `Clippy/UI/Views/Clippy` | `ClippyView`, `BubbleStackView`, `BubbleView` |
 | `Clippy/UI/Views/Characters` | `CharacterView` + one folder per character, shared eyes (`EyeView`, `EyeStyle`) |

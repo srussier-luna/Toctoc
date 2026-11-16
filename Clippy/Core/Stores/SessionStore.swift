@@ -14,8 +14,16 @@ import OSLog
 final class SessionStore {
     private(set) var mood: Mood = .idle
     private(set) var bubbles: [Bubble] = []
+    @ObservationIgnored var areBubblesShown: Bool = true {
+        didSet {
+            guard areBubblesShown, !oldValue else { return }
+            pendingExpiries.forEach { remove($0, after: bubbleDuration) }
+            pendingExpiries = []
+        }
+    }
 
     @ObservationIgnored private var sessions: [String: Session] = [:]
+    @ObservationIgnored private var pendingExpiries: [Bubble] = []
     @ObservationIgnored private let bubbleDuration: Duration
 
     init(bubbleDuration: Duration) {
@@ -68,6 +76,10 @@ final class SessionStore {
         let bubble: Bubble = .init(sessionID: event.sessionID, title: event.title, mood: mood)
         show(bubble)
         guard Constants.expiringMoods.contains(mood) else { return }
+        guard areBubblesShown else {
+            pendingExpiries.append(bubble)
+            return
+        }
         remove(bubble, after: bubbleDuration)
     }
 

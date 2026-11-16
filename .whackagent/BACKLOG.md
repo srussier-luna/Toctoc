@@ -34,6 +34,7 @@ Truth lives in task file's `sprint:` field — this line = echo.
 
 ## Done
 
+- [Add first launch onboarding](tasks/add-first-launch-onboarding.md)
 - [Add character accessories](tasks/add-character-accessories.md)
 - [Keep finished bubbles](tasks/keep-finished-bubbles.md)
 - [Add character picker](tasks/add-character-picker.md)

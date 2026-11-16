@@ -6,6 +6,7 @@
 //
 
 import AppKit
+import Observation
 import OSLog
 
 @MainActor
@@ -13,12 +14,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     let character: CharacterStore = .init()
 
     private let store: SessionStore = .init(bubbleDuration: Constants.bubbleDuration)
+    private let onboarding: OnboardingStore = .init()
     private var overlay: ClippyOverlay?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        let overlay: ClippyOverlay = .init(store: store, character: character)
+        let overlay: ClippyOverlay = .init(store: store, onboarding: onboarding, character: character)
         overlay.show()
         self.overlay = overlay
+        store.areBubblesShown = !onboarding.isShown
+        Task { [store, onboarding] in
+            for await isShown in Observations({ onboarding.isShown }) {
+                store.areBubblesShown = !isShown
+            }
+        }
     }
 
     func application(_ application: NSApplication, open urls: [URL]) {

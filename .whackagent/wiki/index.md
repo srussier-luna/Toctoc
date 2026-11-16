@@ -8,7 +8,7 @@ with `[[wikilink]]` syntax (Obsidian-compatible). Keep it current via `/wa-wiki`
 - [glossary](../conventions/glossary.md) — one word per thing: concepts, screens, parts, flows
 - [[architecture]] — targets, folders, build, runtime check, path of an event to the screen
 - [[events]] — Claude hooks → `clippy-hook.sh` → `clippy://` URL → `ClippyEvent`
-- [[sessions]] — `SessionStore`: mood per session, priority, bubble timing
+- [[sessions]] — `SessionStore`: mood per session, priority, bubble timing, first-launch presentation
 - [[overlay]] — two `NSPanel`s: placement, click-through, first click
 - [[character]] — paperclip drawing, eyes, mood animations
 

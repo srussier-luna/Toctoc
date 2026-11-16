@@ -24,5 +24,13 @@
 - Click on the paperclip → `acknowledge()`: all bubbles leave, finished/failed sessions go idle, working/waiting kept; opens Claude.
 - State in memory only: a relaunch forgets every session.
 - Only « Oups » has a timer (`bubbleDuration`, 10 s, `expiringMoods`); it removes its own bubble (`id`).
+- Timer starts only while `areBubblesShown` (false during the presentation): an « Oups » arriving then waits in `pendingExpiries`, its 10 s start when the presentation ends. `AppDelegate` keeps it in step with `OnboardingStore.isShown`.
 - Click on a bubble → `dismiss(sessionID:)` (bubble only, mood kept) + `ClaudeApplication.open(sessionID:)`: `ClaudeSessionLinkFinder` finds the Claude app file `claude-code-sessions/*/*/local_<id>.json` whose `cliSessionId` = session → opens `claude://claude.ai/epitaxy/local_<id>`; not found → opens Claude. Undocumented Claude app format: may break on update.
 - `bubbleDuration` injected through `init`: tests pass `.zero`.
+
+## Presentation (first launch)
+
+- `OnboardingStore`: 5 `OnboardingStep` bubbles shown together, stacked, instead of agent bubbles (those wait, then show normally).
+- Never leaves by itself: each bubble stays until clicked, hooks connected or not.
+- Click on a bubble → only that one leaves (`dismiss(_:)`); the 5th also opens the README guide.
+- Done when its last bubble leaves: `OnboardingStorage` saves UserDefaults key `onboardingDone`, never shown again.

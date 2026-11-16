@@ -10,6 +10,7 @@
 		046D6B88E603E1571817A132 /* BubbleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6736A318D46CD775CC4215BD /* BubbleStackView.swift */; };
 		089D29434A6BA5520BA4B69E /* AccessoryKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F140E88A6220C559292119C /* AccessoryKind.swift */; };
 		0A939912787AEEC1BD3A5137 /* PaperclipCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307F590E08E78A0A1DE82B4 /* PaperclipCharacter.swift */; };
+		179CEFB0001F02D8E7F6BF1B /* OnboardingStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62045A089A8695173E3F85E7 /* OnboardingStoreTests.swift */; };
 		19041B94F02E586B24DD7D50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D841753D086B532C950DA2 /* AppDelegate.swift */; };
 		1E2B55D03F4BD56AC619CCA4 /* OverlayLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724539F42666C6E1764A0091 /* OverlayLayoutTests.swift */; };
 		1E47910954B8296161BFA692 /* OtterCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A95034FB42B825AB7ED699 /* OtterCharacter.swift */; };
@@ -33,6 +34,7 @@
 		483B62374C240CCABD630531 /* BubbleHitRegionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E5F6AFF7658A0C701B660B /* BubbleHitRegionTests.swift */; };
 		4E52AB23E9C8163C8DE62231 /* ClippyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB129CD6DAA5BCD523CCE6 /* ClippyApp.swift */; };
 		4F247605E0DF2E9D6CF5D4E2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8382E26F61890502CA7DCEA /* Constants.swift */; };
+		5186F3D31274F0A370FE59D4 /* OnboardingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08000D7928D8E5D083042166 /* OnboardingStore.swift */; };
 		52854C023EF6675FF45383DB /* HappyEyeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B30D6DD0AD554F1C8DF8A5 /* HappyEyeShape.swift */; };
 		55E31E360A817FB0A5EB315A /* EyePairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890D271801D4FB11CBB337C4 /* EyePairView.swift */; };
 		574D28793FB10C907C160D59 /* DomeShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266E44C567F18123D1DA7B4F /* DomeShape.swift */; };
@@ -84,9 +86,11 @@
 		CC5389A8A8C8714B3AB8352F /* AccessoryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F941617D07F475C5B79C701D /* AccessoryLayout.swift */; };
 		CE1BE611C60B888882627383 /* ClaudeSessionLinkFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A1AC4981854333A4B9852B /* ClaudeSessionLinkFinder.swift */; };
 		CE57E077F7F197C430C6ED5B /* CloudCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B55095586CDBBFF5D9F7B71 /* CloudCharacter.swift */; };
+		CEF1B80B6937C5DB4B5DFDBF /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07104268798AEEDEDCFEE5 /* OnboardingStep.swift */; };
 		D0579BE9BD72E6E001C460CE /* ClippyPositionStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 767169AAA6E7D731D51540F5 /* ClippyPositionStorage.swift */; };
 		D3D9B8079A55B51CA4A952DC /* OverlayLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF358701A7DD46139BFC00EE /* OverlayLayout.swift */; };
 		E03DDEF6B76CD3BBF30EBFEF /* CharacterStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA17AC45C4719C6DEC9A0A1 /* CharacterStoreTests.swift */; };
+		E09E42BB0D39F2F6528FA3DD /* OnboardingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7573C371EE7AFACC47EE94 /* OnboardingStorage.swift */; };
 		E37AEBEDBADD46A4AB78777E /* TurnBulge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD9A4B6360840B91F9CD291 /* TurnBulge.swift */; };
 		E7FC2AC66F6745A7EE1C6106 /* CapAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826C8302F2C5702EEBA0FF53 /* CapAccessory.swift */; };
 		EAC31B45CA0BD002274F180B /* MustacheShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A8ACE36584EDCB1DF5D7 /* MustacheShape.swift */; };
@@ -114,13 +118,16 @@
 
 /* Begin PBXFileReference section */
 		02B4A135B171697A2CEBCE95 /* BlinkModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkModifier.swift; sourceTree = "<group>"; };
+		08000D7928D8E5D083042166 /* OnboardingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStore.swift; sourceTree = "<group>"; };
 		0AAC643716D92C63FB154EB0 /* ClippyDragTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyDragTests.swift; sourceTree = "<group>"; };
+		0C07104268798AEEDEDCFEE5 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		0D55E885894D85A33F17123E /* ClippyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyView.swift; sourceTree = "<group>"; };
 		0F140E88A6220C559292119C /* AccessoryKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryKind.swift; sourceTree = "<group>"; };
 		12ADE7884206AFFA6F2D23BD /* ClippyOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClippyOverlay.swift; sourceTree = "<group>"; };
 		1307F590E08E78A0A1DE82B4 /* PaperclipCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaperclipCharacter.swift; sourceTree = "<group>"; };
 		18F5590F0548E2BC824D627D /* BubbleSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSide.swift; sourceTree = "<group>"; };
 		1A87D1D0A93947BF27D07F0C /* CharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterView.swift; sourceTree = "<group>"; };
+		1C7573C371EE7AFACC47EE94 /* OnboardingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStorage.swift; sourceTree = "<group>"; };
 		1D00C84CE8E8643AE829F018 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		1D7A846FF1B8D95CEF440A61 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2360ECBCC001B7B4685634A3 /* ClippyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClippyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +157,7 @@
 		595F5F206321AC02DB472A2C /* ScarfAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarfAccessory.swift; sourceTree = "<group>"; };
 		5D925B3C35D09B9EE2555729 /* AccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoryView.swift; sourceTree = "<group>"; };
 		61A95034FB42B825AB7ED699 /* OtterCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtterCharacter.swift; sourceTree = "<group>"; };
+		62045A089A8695173E3F85E7 /* OnboardingStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStoreTests.swift; sourceTree = "<group>"; };
 		63A9ADC130DD10203D80EC5C /* FirstClickHostingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstClickHostingView.swift; sourceTree = "<group>"; };
 		65A1AC4981854333A4B9852B /* ClaudeSessionLinkFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeSessionLinkFinder.swift; sourceTree = "<group>"; };
 		6736A318D46CD775CC4215BD /* BubbleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleStackView.swift; sourceTree = "<group>"; };
@@ -323,6 +331,8 @@
 			children = (
 				FD6AE361B5638D0D8C78C0D2 /* CharacterStorage.swift */,
 				7C30CC6B991A40F48065B35C /* CharacterStore.swift */,
+				1C7573C371EE7AFACC47EE94 /* OnboardingStorage.swift */,
+				08000D7928D8E5D083042166 /* OnboardingStore.swift */,
 				3F1D67DD0201ABE9B09536C2 /* SessionStore.swift */,
 				849D804C396611780E94FD3F /* Models */,
 			);
@@ -436,6 +446,7 @@
 				1D00C84CE8E8643AE829F018 /* Bubble.swift */,
 				77FEF60617C1AF198B617012 /* CharacterKind.swift */,
 				4224DC35B166634D3D8E6B22 /* Mood.swift */,
+				0C07104268798AEEDEDCFEE5 /* OnboardingStep.swift */,
 				1D7A846FF1B8D95CEF440A61 /* Session.swift */,
 			);
 			path = Models;
@@ -636,6 +647,7 @@
 				0AAC643716D92C63FB154EB0 /* ClippyDragTests.swift */,
 				4A371F9FE565336ADE6476A5 /* ClippyEventTests.swift */,
 				9D0A42FD5BF8CAB280BFF943 /* ClippyPositionStorageTests.swift */,
+				62045A089A8695173E3F85E7 /* OnboardingStoreTests.swift */,
 				724539F42666C6E1764A0091 /* OverlayLayoutTests.swift */,
 				6D89E431A9A97A31C853ECCA /* SessionStoreTests.swift */,
 			);
@@ -774,6 +786,7 @@
 				68F347CE7FB56C8A52122EA8 /* ClippyDragTests.swift in Sources */,
 				F9C43E81493226227E157CF7 /* ClippyEventTests.swift in Sources */,
 				BBBAA31AFA1F052933418372 /* ClippyPositionStorageTests.swift in Sources */,
+				179CEFB0001F02D8E7F6BF1B /* OnboardingStoreTests.swift in Sources */,
 				1E2B55D03F4BD56AC619CCA4 /* OverlayLayoutTests.swift in Sources */,
 				64002D4A48A5BEFC45BC7A0A /* SessionStoreTests.swift in Sources */,
 			);
@@ -839,6 +852,9 @@
 				38C2695A0404A3AAB191F78E /* MuzzleView.swift in Sources */,
 				9420BCB7D22E67FFAC30F22C /* NSPanelExtension.swift in Sources */,
 				9FEF0B472AD4277D85E14104 /* NSScreenExtension.swift in Sources */,
+				CEF1B80B6937C5DB4B5DFDBF /* OnboardingStep.swift in Sources */,
+				E09E42BB0D39F2F6528FA3DD /* OnboardingStorage.swift in Sources */,
+				5186F3D31274F0A370FE59D4 /* OnboardingStore.swift in Sources */,
 				1E47910954B8296161BFA692 /* OtterCharacter.swift in Sources */,
 				30579703108D88659F643654 /* OtterPawsView.swift in Sources */,
 				5C4970EF29CD20D6E17C55A2 /* OtterShellView.swift in Sources */,

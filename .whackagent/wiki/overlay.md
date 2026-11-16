@@ -3,7 +3,7 @@
 - `ClippyOverlay` owns two panels built by `NSPanel.overlay(content:size:isClickThrough:)`: borderless, non-activating, level `.statusBar`, clear, no shadow.
 - Collection behavior `[.canJoinAllSpaces, .canJoinAllApplications, .stationary, .ignoresCycle, .fullScreenAuxiliary]`. `.canJoinAllApplications` added against the flash on Space switch (agent app windows belong to its own set only; cause not proven). Plan B if it flashes again: level `.screenSaver` (also above menus and alerts).
 - Character panel 64×136: clickable, hosts `ClippyView`. `FirstClickHostingView` accepts the first mouse.
-- Bubble panel 320×144: hosts `BubbleStackView` in a `FirstClickHostingView`; `ignoresMouseEvents` toggled from mouse monitors so only bubbles take clicks (`BubbleHitRegion`), rest passes through (up to 3 `BubbleView`, newest nearest the paperclip, panel grows upward).
+- Bubble panel 320×144 (320×300 during the presentation, to hold its 5 bubbles): hosts `BubbleStackView` in a `FirstClickHostingView`; `ignoresMouseEvents` toggled from mouse monitors so only bubbles take clicks (`BubbleHitRegion`), rest passes through (up to 3 `BubbleView`, newest nearest the paperclip, panel grows upward).
 
 ## Placement and drag
 
