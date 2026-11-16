@@ -1,0 +1,8 @@
+.whackagent/reports/
+ClippyTests/
+.DS_Store
+xcuserdata/
+DerivedData/
+.build/
+Makefile
+xcodemake*.log
